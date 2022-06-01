@@ -1,0 +1,24 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  laravel:
+    build: .
+    image: pitest
+    ports:
+      - "9000:80"
+    environment:
+      DB_HOST: "db"
+      DB_DATABASE: "pi5"
+      DB_USERNAME: "root"
+    networks:
+      - rede1
+  db:
+    image: 'mysql:8.0'
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "pi5"
+    expose:
+      - '3306'
+    networks:
+      - rede1
+networks:
+  rede1:

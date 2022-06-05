@@ -13,12 +13,25 @@ class AddFieldsToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('address');
-            $table->string('number');
-            $table->string('cellphone');
-            $table->string('city');
-            $table->string('state');
+        $driver = Schema::connection($this->getConnection())->getConnection()->getDriverName();
+
+        Schema::table('users', function (Blueprint $table)use($driver) {
+
+            if ('sqlite' === $driver) {
+                $table->string('address')->default('0');
+                $table->string('number')->default('0');
+                $table->string('cellphone')->default('0');
+                $table->string('city')->default('0');
+                $table->string('state')->default('0');
+            } else {
+                $table->string('address');
+                $table->string('number');
+                $table->string('cellphone');
+                $table->string('city');
+                $table->string('state');
+            }
+
+
         });
     }
 

@@ -13,7 +13,7 @@ class AddRelationProductAndTag extends Migration
             $table->integer('product_id');
             $table->integer('tag_id');
 
-        });  
+        });
     }
 
     public function down()

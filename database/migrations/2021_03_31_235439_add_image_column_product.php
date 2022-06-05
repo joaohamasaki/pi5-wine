@@ -8,8 +8,14 @@ class AddImageColumnProduct extends Migration
 {
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('image');
+        $driver = Schema::connection($this->getConnection())->getConnection()->getDriverName();
+
+        Schema::table('products', function (Blueprint $table)use($driver) {
+            if ('sqlite' === $driver) {
+                $table->string('image')->default('');
+            } else {
+                $table->string('image');
+            }
         });
     }
 

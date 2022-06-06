@@ -30,7 +30,6 @@
                 <div class="card-body">
                     <img  id="box1" class="card-img-top img-responsive" src="img/p2.jpg" />
                     <h3 class="card-title">{{ $cat->name }}</h3>
-                    <h3 class="card-title"> DESCOBERTAS</h3>
                     <h6 class="card-text" id="mktColor">Próximo passo para a evolução da sua experiência enológica.</h6>
                     <a class="btn btn-primary fw-bold mt-3" href="{{ route('category.show', $cat->id) }}" role="button" style="color: white; background: #30092a; border: none; padding: 15px; border-radius: 12px;">Assine!</a>
                 </div>

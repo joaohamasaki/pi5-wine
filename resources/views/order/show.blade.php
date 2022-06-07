@@ -35,12 +35,6 @@
                                     <td>
                                         <span> R$ {{ number_format($item->price * $item->quantity, 2, ',' , '.') }} (R$ {{ number_format($item->price,2, ',' , '.') }})</span>
                                     </td>
-                                    <form class="d-inline" action="{{ route('order.destroy', $order->id) }}" method="POST"
-                                        onsubmit=" return remover()">
-                                        @csrf
-                                        @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
-                        </form>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('title', 'Cadastrar Tag do Fantoy')
+@section('title', 'Cadastrar Tag')
 @section('content')
-<h1>Cadastrar Tag do Fantoy:</h1>
+<h1>Cadastrar Tag:</h1>
     <form method="POST" action="{{ route('tag.store') }}">
         @csrf
         <div class="row">

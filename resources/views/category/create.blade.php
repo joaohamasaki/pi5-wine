@@ -1,8 +1,8 @@
 @extends('layouts.main')
-@section('title', 'Cadastrar Categoria dos Fantoy')
+@section('title', 'Cadastrar Categoria')
 
 @section('content')
-<h1>Cadastrar Categoria do Fantoy:</h1>
+<h1>Cadastrar Categoria:</h1>
     <form method="POST" action="{{ route('category.store') }}">
         @csrf
         <div class="row">

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
-  
+
     public function index()
     {
         return view('category.index')->with('categories', Category::all());
@@ -28,7 +28,7 @@ class CategoriesController extends Controller
 
 
     public function show(Category $category)
-    {   
+    {
         return view('category.show')->with(['category' => $category, 'products' => $category->product()->paginate(3)]);
     }
 
@@ -40,18 +40,14 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-        session()->flash('success','Categoria Fantoy foi alterado com sucesso!');
+        session()->flash('success','A Categoria foi alterada com sucesso!');
         return redirect( route('category.index') );
     }
 
     public function destroy(Category $category)
     {
-        if($category->produtcs()->count()>0) {
-            session()->flash('success','voce nao pode deletar uma categoria que contenha produto!');
-            return redirect( route('category.index') );
-        }
         $category->delete();
-        session()->flash('success','Categoria Fantoy foi apagado com sucesso!');
+        session()->flash('success','A Categoria foi apagada com sucesso!');
         return redirect( route('category.index') );
     }
 }

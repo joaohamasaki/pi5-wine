@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('title', 'Editar Categorias Fantoys')
+@section('title', 'Editar Categorias')
 @section('content')
-    <h1>Editar Categoria Fantoy:</h1>
+    <h1>Editar Categoria:</h1>
     <form method="POST" action="{{ route('category.update', $category->id ) }}">
         @csrf
         @method('PATCH')

@@ -23,7 +23,7 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         Tag::create ($request->all());
-        session()->flash('success','A tag do Fantoy foi cadastrado com sucesso!');
+        session()->flash('success','A tag foi cadastrada com sucesso!');
         return redirect(route('tag.index'));
     }
 
@@ -42,7 +42,7 @@ class TagsController extends Controller
     public function update(Request $request, Tag $tag)
     {
         $tag->update($request->all());
-        session()->flash('success','A tag do Fantoy foi alterado com sucesso!');
+        session()->flash('success','A tag foi alterada com sucesso!');
         return redirect( route('tag.index') );
     }
 
@@ -50,7 +50,7 @@ class TagsController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
-        session()->flash('success','Fantoy foi apagado com sucesso!');
+        session()->flash('success','A tag foi apagada com sucesso!');
         return redirect( route('tag.index') );
     }
 }

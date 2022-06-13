@@ -42,7 +42,7 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         $order->delete();
-        session()->flash('success','Fantoy foi apagado com sucesso!');
+        session()->flash('success','Produto foi apagado com sucesso!');
         return redirect( route('order.show') );
     }
 

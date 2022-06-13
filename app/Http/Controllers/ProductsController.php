@@ -78,7 +78,7 @@ class ProductsController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        session()->flash('success','Fantoy foi apagado com sucesso!');
+        session()->flash('success','O produto foi apagado com sucesso!');
         return redirect( route('product.index') );
     }
 
@@ -89,7 +89,7 @@ class ProductsController extends Controller
     public function restore($id){
         $product=Product::onlyTrashed()->where('id', $id)->firstOrFail();
         $product->restore();
-        session()->flash('success','Fantoy foi restaurado com sucesso!');
+        session()->flash('success','O produto foi restaurado com sucesso!');
         return redirect( route('product.trash') );
     }
 

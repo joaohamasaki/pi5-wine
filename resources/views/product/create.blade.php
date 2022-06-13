@@ -42,7 +42,8 @@
             <input type="file" class="form-control" name="image">
         </div>
         <div class="row mt-4">
-            <button type="submit" class="btn btn-success btn-lg" style="color: white; background: #30092a; border: none; padding: 15px; border-radius: 12px;">Salvar</button>
+            <button type="submit" class="btn btn-success btn-lg"
+            style="color: white; background: #30092a; border: none; padding: 15px; border-radius: 12px;">Salvar</button>
             <a href="{{ route('product.index') }}" class="btn btn-lg btn-primary mt-2">Voltar</a>
         </div>
     </form>

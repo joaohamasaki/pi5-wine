@@ -34,11 +34,11 @@
                         <a class="nav-link" style="color: white" href="{{ route('order.show') }}">Pedidos</a>
                         <form method="POST" action="{{ route('logout') }}" class="d-flex">
                             @csrf
-                            <button type="submit" style="border: 0px;background: none; color: white;">Deslogar</button>
+                            <button type="submit" style="border: 0px;background: none; color: white;">Sair</button>
                         </form>
                         @else
                         <a class="nav-link" href="{{ route('register')}}">Cadastrar</a>
-                        <a class="nav-link" href="{{ route('login')}}">Login</a>
+                        <a class="nav-link" href="{{ route('login')}}">Entrar</a>
                         @endif
                     </div>
                 </div>
